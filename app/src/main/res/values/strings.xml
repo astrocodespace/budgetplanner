@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">BudgetPlanner</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="home_header">My Expanses</string>
+
+    <string name="entry_title">Title</string>
+    <string name="entry_description">Description</string>
+    <string name="entry_amount">Amount</string>
+    <string name="entry_date">Choose Date</string>
+    <string name="choose_category">Choose category:</string>
+
+    <string-array name="entries_categories">
+        <item>Others</item>
+        <item>Clothing</item>
+        <item>Food</item>
+        <item>Transport</item>
+        <item>Car</item>
+        <item>Bills</item>
+    </string-array>
+</resources>

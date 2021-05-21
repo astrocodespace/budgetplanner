@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="item_spacing">20dp</dimen>
+
+    <dimen name="text_heading">25sp</dimen>
+    <dimen name="text_normal">18sp</dimen>
+    <dimen name="text_small">15sp</dimen>
+</resources>

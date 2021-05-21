@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".AddEntryActivity">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_spacing"
+        android:src="@drawable/back_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/colorWhite" />
+
+    <ImageView
+        android:id="@+id/create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_spacing"
+        android:src="@drawable/tick_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/colorWhite" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/entryTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_spacing"
+                android:ellipsize="end"
+                android:hint="@string/entry_title"
+                android:maxLines="1"
+                android:padding="@dimen/item_spacing"
+
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/text_heading"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/back" />
+
+            <EditText
+                android:id="@+id/entryDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_spacing"
+                android:ellipsize="end"
+                android:hint="@string/entry_description"
+                android:maxLines="3"
+                android:minLines="3"
+
+                android:padding="@dimen/item_spacing"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/text_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/entryTitle" />
+
+            <EditText
+                android:id="@+id/entryAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_spacing"
+                android:ellipsize="end"
+                android:hint="@string/entry_amount"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+
+                android:padding="@dimen/item_spacing"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/text_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/entryDescription" />
+
+            <EditText
+                android:id="@+id/entryDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_spacing"
+                android:calendarViewShown="false"
+                android:drawableEnd="@drawable/calendar_icon"
+                android:ellipsize="end"
+                android:focusable="false"
+
+                android:hint="@string/entry_date"
+                android:onClick="openDatePicker"
+                android:padding="@dimen/item_spacing"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/text_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/entryAmount" />
+
+            <TextView
+                android:id="@+id/categoryLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/item_spacing"
+                android:paddingTop="15dp"
+                android:text="@string/choose_category"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/entryDate" />
+
+            <Spinner
+                android:id="@+id/entryCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_spacing"
+                android:ellipsize="end"
+                android:entries="@array/entries_categories"
+
+                android:padding="@dimen/item_spacing"
+
+
+                android:textColor="@color/colorWhite"
+
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/text_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/categoryLabel"
+
+                />
+
+            <RadioGroup
+                android:id="@+id/entryType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/entryCategory">
+
+                <RadioButton
+                    android:id="@+id/entryTypeIncome"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Income"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/entryTypeExpanse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Expanse"
+                    android:textColor="@color/colorWhite" />
+
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
